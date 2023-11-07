@@ -1,16 +1,24 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import streamlit as st
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+container = st.container()
+
+with container:
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image('images/my_photo.jpeg')
+
+    with col2:
+        st.title('Olena Abert')
+        content = """Front-end developer with experience in maintaining and building web pages. 
+        Proficient with HTML/CSS/SCSS/JS/TypeScript, ReactJS (Redux, Redux Toolkit) and Python. 
+        Building state-of-the-art, easy to use, user-friendly websites and applications is truly a passion of mine. 
+        In addition to my knowledge base, I actively seek out new technologies and stay up-to-date on industry trends and
+         advancements."""
+        st.info(content)
+
+sub_content = """Below you can find some of the apps I have build in Python."""
+st.write(sub_content)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
