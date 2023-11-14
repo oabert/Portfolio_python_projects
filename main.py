@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 
 container = st.container()
@@ -20,5 +21,16 @@ with container:
 
 sub_content = """Below you can find some of the apps I have build in Python."""
 st.write(sub_content)
+col3, col4 = st.columns(2)
 
+data_frame = pandas.read_csv('data.csv', sep=';')
+
+with col3:
+    for index, row in data_frame[:10].iterrows():
+        st.header(row['title'])
+
+with (col4
+      ):
+    for index, row in data_frame[10:].iterrows():
+        st.header(row['title'])
 
